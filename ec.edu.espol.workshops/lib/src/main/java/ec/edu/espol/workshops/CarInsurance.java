@@ -20,6 +20,20 @@ public class CarInsurance {
 	    return maritalStatus;
 	  }
 	
+	public void setAge(String age)
+    {
+            this.age = age;
+    }
+	
+	public void setSex(String sex)
+    {
+            this.sex = sex;
+    }
+	
+	public void setMaritalStatus(String maritalStatus)
+    {
+            this.maritalStatus = maritalStatus;
+    }
 }
 
 
