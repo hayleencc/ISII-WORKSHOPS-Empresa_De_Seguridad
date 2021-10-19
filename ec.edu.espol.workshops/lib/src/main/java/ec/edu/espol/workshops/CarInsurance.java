@@ -1,6 +1,5 @@
 package ec.edu.espol.workshops;
 
-import java.util.ArrayList;
 import java.util.Scanner;
 
 public class CarInsurance {
@@ -63,16 +62,17 @@ public class CarInsurance {
 			System.out.print("sorry, premium car insurance is not available for 80 years older");
 			return;
 		}
+		
 
 		System.out.print("Sex [M/F] :");
 		String sex = sc.nextLine();
 		boolean validSex = sex.equalsIgnoreCase("M") || sex.equalsIgnoreCase("F");
-		validSex = sex.length() > 0;
 		while (!validSex) {
 			System.out.print("Enter an correct sex [M/F]:");
 			sex = sc.nextLine();		
 			validSex = sex.equalsIgnoreCase("M") || sex.equalsIgnoreCase("F");
 		}
+		
 
 		System.out.print("Is married? [Y/N]:");
 		String yOrN = sc.nextLine();
@@ -83,6 +83,7 @@ public class CarInsurance {
 			validMarried = yOrN.equalsIgnoreCase("Y") || yOrN.equalsIgnoreCase("N");
 		}
 		boolean married =  yOrN.equalsIgnoreCase("Y");
+		
 
 		System.out.print("Driving License [ten digits]:");
 		String license = sc.nextLine();
@@ -92,9 +93,9 @@ public class CarInsurance {
 			license = sc.nextLine();
 			validLicense = isNumeric(license) && license.length() == 10;
 		}
+		
 
 		int total = 500;
-
 		if (sex.equalsIgnoreCase("m") && !married && Integer.valueOf(age) < 25) {
 			total += 1500;
 		} else if (sex.equalsIgnoreCase("f") || married) {
@@ -103,14 +104,13 @@ public class CarInsurance {
 		if (Integer.valueOf(age) > 45 && Integer.valueOf(age) < 65) {
 			total -= 100;
 		}
-
 		System.out.print(total);
 
 	}
 
 	private static boolean isNumeric(String license) {
 		try {
-			Integer.parseInt(license);
+			Long.parseLong(license);
 			return true;
 		} catch (NumberFormatException nfe) {
 			return false;
