@@ -52,43 +52,69 @@ public class CarInsurance {
 		System.out.println("Enter customer information");
 
 		System.out.print("Age:");
-		int age = sc.nextInt();
-		sc.nextLine();
+		String age = sc.nextLine();
+		boolean validAge = isNumeric(age);
+		while (!validAge) {
+			System.out.print("Enter an valid number for age:");
+			age = sc.nextLine();
+			validAge = isNumeric(age);
+		}
+		if (Integer.valueOf(age) > 80) {
+			System.out.print("sorry, premium car insurance is not available for 80 years older");
+			return;
+		}
 
 		System.out.print("Sex [M/F] :");
-		char sex = sc.nextLine().charAt(0);
+		String sex = sc.nextLine();
+		boolean validSex = sex.equalsIgnoreCase("M") || sex.equalsIgnoreCase("F");
+		validSex = sex.length() > 0;
+		while (!validSex) {
+			System.out.print("Enter an correct sex [M/F]:");
+			sex = sc.nextLine();		
+			validSex = sex.equalsIgnoreCase("M") || sex.equalsIgnoreCase("F");
+		}
 
 		System.out.print("Is married? [Y/N]:");
-		boolean married = String.valueOf(sc.nextLine().charAt(0)).equalsIgnoreCase("y");
+		String yOrN = sc.nextLine();
+		boolean validMarried = yOrN.equalsIgnoreCase("Y") || yOrN.equalsIgnoreCase("N");
+		while (!validMarried) {
+			System.out.print("Enter an correct answer for married [Y/N]:");
+			yOrN =  sc.nextLine();
+			validMarried = yOrN.equalsIgnoreCase("Y") || yOrN.equalsIgnoreCase("N");
+		}
+		boolean married =  yOrN.equalsIgnoreCase("Y");
 
-		System.out.print("Driving License:");
+		System.out.print("Driving License [ten digits]:");
 		String license = sc.nextLine();
-		
-		System.out.print(CarInsurance.calculateInsurance(age,sex,married,license));
+		boolean validLicense = isNumeric(license) && license.length() == 10;
+		while (!validLicense) {
+			System.out.print("Come on, Driving License [ten digits]:");
+			license = sc.nextLine();
+			validLicense = isNumeric(license) && license.length() == 10;
+		}
+
+		int total = 500;
+
+		if (sex.equalsIgnoreCase("m") && !married && Integer.valueOf(age) < 25) {
+			total += 1500;
+		} else if (sex.equalsIgnoreCase("f") || married) {
+			total -= 200;
+		}
+		if (Integer.valueOf(age) > 45 && Integer.valueOf(age) < 65) {
+			total -= 100;
+		}
+
+		System.out.print(total);
 
 	}
 
-	public static int calculateInsurance(int age, char sex, boolean married, String license) {
-
-		boolean validLicense = true;
-		
-		if (age > 80 || !validLicense) {
-			return -1;
+	private static boolean isNumeric(String license) {
+		try {
+			Integer.parseInt(license);
+			return true;
+		} catch (NumberFormatException nfe) {
+			return false;
 		}
-		
-		int total = 500;
-		
-		if ((sex=='m' || sex=='M') && !married && age<25 ) {
-			total+=1500;
-		}
-		else if (sex=='f' || sex=='F' || married) {
-			total -=200;
-		}
-		if (age>45 && age<65) {
-			total -=100;
-		}
-
-		return total;
 	}
 
 }
