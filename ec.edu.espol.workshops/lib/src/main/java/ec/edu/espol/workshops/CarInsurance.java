@@ -2,47 +2,50 @@ package ec.edu.espol.workshops;
 
 import java.util.Scanner;
 
+//Clase principal CarInsurance
 public class CarInsurance {
+/* Subclase Customer que contiene los 4 atributos requeridos
+ * la edad, sexo, si esta casado o no, y el numero de licencia.
+ */
+public class Customer {
 
-	public class Customer {
+	private int age;
+	private char sex;
+	private boolean married;
+	private String driverLicense;
 
-		private int age;
-		private char sex;
-		private boolean married;
-		private String driverLicense;
-
-		public int getAge() {
-			return this.age;
-		}
-
-		public char getSex() {
-			return this.sex;
-		}
-
-		public boolean isMarried() {
-			return this.married;
-		}
-
-		public String driverLicense() {
-			return this.driverLicense;
-		}
-
-		public void setAge(int age) {
-			this.age = age;
-		}
-
-		public void setSex(char sex) {
-			this.sex = sex;
-		}
-
-		public void setMarried(boolean married) {
-			this.married = married;
-		}
-
-		public void setDriverLicense(String driverLicense) {
-			this.driverLicense = driverLicense;
-		}
+	public int getAge() {
+		return this.age;
 	}
+
+	public char getSex() {
+		return this.sex;
+	}
+
+	public boolean isMarried() {
+		return this.married;
+	}
+
+	public String driverLicense() {
+		return this.driverLicense;
+	}
+
+	public void setAge(int age) {
+		this.age = age;
+	}
+
+	public void setSex(char sex) {
+		this.sex = sex;
+	}
+
+	public void setMarried(boolean married) {
+		this.married = married;
+	}
+
+	public void setDriverLicense(String driverLicense) {
+		this.driverLicense = driverLicense;
+	}
+}
 
 	public static void main(String args[]) {
 
