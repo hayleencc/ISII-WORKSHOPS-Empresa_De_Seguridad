@@ -8,6 +8,7 @@ public class CarInsurance {
 
 		private int age;
 		private char sex;
+		
 		private boolean married;
 		private String driverLicense;
 
