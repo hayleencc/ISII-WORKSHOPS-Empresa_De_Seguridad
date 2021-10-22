@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class CarInsurance {
 
-	public class Customer {
+	static public class Customer {
 
 		private int age;
 		private char sex;
@@ -47,7 +47,7 @@ public class CarInsurance {
 
 	public static void main(String args[]) {
 
-		Scanner sc = new Scanner(System.in);
+		Scanner sc = new Scanner(System.in, "UTF-8");
 		System.out.println("Premium Car Insurance Calculator");
 		System.out.println("Enter customer information");
 
@@ -59,7 +59,7 @@ public class CarInsurance {
 			age = sc.nextLine();
 			validAge = isNumeric(age);
 		}
-		if (Integer.valueOf(age) > 80) {
+		if (Integer.parseInt(age) > 80) {
 			System.out.print("sorry, premium car insurance is not available for 80 years older");
 			return;
 		}
