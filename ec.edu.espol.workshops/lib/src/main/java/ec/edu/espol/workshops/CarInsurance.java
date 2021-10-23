@@ -62,7 +62,7 @@ public class Customer {
 			validAge = isNumeric(age);
 		}
 		if (Integer.valueOf(age) > 80) {
-			System.out.print("sorry, premium car insurance is not available for 80 years older");
+			System.out.print("sorry, over 80 years");
 			return;
 		}
 		
