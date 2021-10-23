@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class CarInsurance {
 
-	static public class Customer {
+	static class Customer {
 
 		private int age;
 		private char sex;
