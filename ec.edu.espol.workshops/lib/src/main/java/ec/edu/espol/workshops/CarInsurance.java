@@ -9,13 +9,57 @@ public class CarInsurance {
  */
 public class Customer {
 
+<<<<<<< HEAD
 	private int age;
 	private char sex;
 	private boolean married;
 	private String driverLicense;
+=======
+	static class Customer {
+>>>>>>> refs/remotes/origin/SpotBugs
 
+<<<<<<< HEAD
 	public int getAge() {
 		return this.age;
+=======
+		private int age;
+		private char sex;
+		
+		private boolean married;
+		private String driverLicense;
+
+		public int getAge() {
+			return this.age;
+		}
+
+		public char getSex() {
+			return this.sex;
+		}
+
+		public boolean isMarried() {
+			return this.married;
+		}
+
+		public String driverLicense() {
+			return this.driverLicense;
+		}
+
+		public void setAge(int age) {
+			this.age = age;
+		}
+
+		public void setSex(char sex) {
+			this.sex = sex;
+		}
+
+		public void setMarried(boolean married) {
+			this.married = married;
+		}
+
+		public void setDriverLicense(String driverLicense) {
+			this.driverLicense = driverLicense;
+		}
+>>>>>>> refs/remotes/origin/SpotBugs
 	}
 
 	public char getSex() {
@@ -49,7 +93,7 @@ public class Customer {
 
 	public static void main(String args[]) {
 
-		Scanner sc = new Scanner(System.in);
+		Scanner sc = new Scanner(System.in, "UTF-8");
 		System.out.println("Premium Car Insurance Calculator");
 		System.out.println("Enter customer information");
 
@@ -61,8 +105,13 @@ public class Customer {
 			age = sc.nextLine();
 			validAge = isNumeric(age);
 		}
+<<<<<<< HEAD
 		if (Integer.valueOf(age) > 80) {
 			System.out.print("sorry, over 80 years");
+=======
+		if (Integer.parseInt(age) > 80) {
+			System.out.print("sorry, premium car insurance is not available for 80 years older");
+>>>>>>> refs/remotes/origin/SpotBugs
 			return;
 		}
 		
