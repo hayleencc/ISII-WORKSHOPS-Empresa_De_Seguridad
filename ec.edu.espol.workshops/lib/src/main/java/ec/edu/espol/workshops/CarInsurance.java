@@ -8,14 +8,7 @@ import java.util.Scanner;
  */
 public class CarInsurance {
 
-	private CarInsurance() {
-	}
-
-	/**
-	 * @author ispovala
-	 *
-	 */
-	public class Customer {
+	static class Customer {
 
 		/**
 		 * AGE OF THE COSTUMER
