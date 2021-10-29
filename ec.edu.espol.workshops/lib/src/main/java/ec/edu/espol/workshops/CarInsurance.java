@@ -5,6 +5,14 @@ import java.util.Scanner;
 /**
  * @author ispovala
  *
+
+ */
+//Clase principal CarInsurance
+public class CarInsurance {
+/* Subclase Customer que contiene los 4 atributos requeridos
+ * la edad, sexo, si esta casado o no, y el numero de licencia.
+
+
  */
 public class CarInsurance {
 
@@ -31,13 +39,45 @@ public class CarInsurance {
 			return this.age;
 		}
 
+
+	private CarInsurance() {
+	}
+
+	/**
+	 * @author ispovala
+	 *
+	 */
+	public class Customer {
+
+		/**
+		 * AGE OF THE COSTUMER
+		 */
+		private int age;
+		/**
+		 * SEX OF THE COSTUMER
+		 */
+		private char sex;
+		/**
+		 * IS THE COSTUMER MARRIED
+		 */
+		private boolean married;
+		/**
+		 * 10 DIGITS DRIVER LICENSE OF THE COSTUMER
+		 */
+		private String driverLicense;
+
+		public int getAge() {
+			return this.age;
+		}
+
 		public char getSex() {
 			return this.sex;
 		}
 
-		public boolean isMarried() {
-			return this.married;
-		}
+	public boolean isMarried() {
+		return this.married;
+	}
+
 
 		public String getDriverLicense() {
 			return this.driverLicense;
