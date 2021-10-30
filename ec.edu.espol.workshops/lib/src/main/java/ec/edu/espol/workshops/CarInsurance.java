@@ -81,8 +81,13 @@ public class CarInsurance {
             validAge = isNumeric(age);
         }
         boolean isOlder = Integer.valueOf(age) > 80;
+        boolean isVeryYounger = Integer.valueOf(age) < 18;
         if (isOlder) {
-            System.out.print("sorry, premium car insurance is not available for 80 years older");
+            System.out.println("Sorry, premium car insurance is not available for 80 years older");
+            return;
+        }
+        else if (isVeryYounger) {
+            System.out.println("Sorry, premium car insurance is not available for under age");
             return;
         }
 
@@ -123,7 +128,7 @@ public class CarInsurance {
         } else if (!isMale || married) {
             total -= 200;
         }
-        if (Integer.valueOf(age) > 45 && Integer.valueOf(age) < 65) {
+        if (Integer.valueOf(age) >= 45 && Integer.valueOf(age) < 65) {
             total -= 100;
         }
         System.out.println("");
