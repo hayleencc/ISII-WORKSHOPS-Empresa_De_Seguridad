@@ -123,11 +123,11 @@ public class CarInsurance {
         } else if (!isMale || married) {
             total -= 200;
         }
-        if (Integer.valueOf(age) > 45 && Integer.valueOf(age) < 65) {
+        if (Integer.valueOf(age) >= 45 && Integer.valueOf(age) < 65) {
             total -= 100;
         }
         System.out.println("");
-        System.out.println("Premiunm Car Insurance:");
+        System.out.println("Premium Car Insurance:");
         System.out.println("$"+total);
         System.out.println("");
 
