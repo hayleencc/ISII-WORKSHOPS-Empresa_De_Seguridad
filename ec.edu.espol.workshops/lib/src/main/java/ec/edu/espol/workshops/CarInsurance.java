@@ -93,7 +93,7 @@ public class CarInsurance {
         } else if (!isMale || this.married) {
             total -= 200;
         }
-        if (Integer.valueOf(this.age) >= 45 && Integer.valueOf(this.age) < 65) {
+        if (Integer.valueOf(this.age) >= 45 && Integer.valueOf(age) < 65) {
             total -= 100;
         }
         

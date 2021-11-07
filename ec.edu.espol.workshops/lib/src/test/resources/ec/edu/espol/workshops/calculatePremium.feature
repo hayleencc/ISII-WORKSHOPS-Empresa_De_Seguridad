@@ -1,30 +1,32 @@
 Feature: Calculate the insurance prime for a customer
 
+	Scenario Outline: The customer is a married Female between the ages of 44 and 66
+ 		Given The customer has 21 years old, is single and female, and her license is 1904002349
+ 		When We Calculate the premium car insurance
+ 		Then I should be told 300
+ 	
 	Scenario: The customer is over 80 years old
-		Given An 81-year-old single female customer with driver’s license 1904002349
- 		When Enter the age
- 		Then I should be told sorry, premium car insurance is not available for 80 years older
+		Given The customer has 81 years old, is single and female, and her license is 1904002349
+ 		When The customer gives her age
+ 		Then I should be told 0
 	
 	Scenario: The customer doesn’t have a valid driver’s license 
-		Given A 50-year-old single female customer with driver’s license 190400234
-		When Enter driver’s license number
-		Then I should be told Come on, Driving License [ten digits]:
+		Given The customer has 50 years old, is single and female, and her license is 190400234
+		When The customer Enter driver’s license number
+		Then I should be told I should be told 0
 
 	Scenario: The customer is a 24-year-old single Male 
-		Given A 24-year-old single male customer with driver’s license 1904002345
-		When Calculate the premium car insurance
-		Then I should be told Premium Car Insurance: $2000
+		Given The customer has 24 years old, is single and male, and his license is 1904002345
+		When The customer Calculates the premium car insurance
+		Then I should be told 2000
 
- 	Scenario Outline: The customer is a married Female between the ages of 44 and 66
- 		Given A "<age>"-year-old married female customer with driver’s license 1904002349
- 		When Calculate the premium car insurance
- 		Then I should be told Premium Car Insurance: "<answer>"
+ 	
  		
  	Examples:
  		| age | answer |
- 		| 44  | $300   |
- 		| 45  | $200   |
- 		| 46  | $200   |
- 		| 64  | $200   |
- 		| 65  | $300   |
- 		| 66  | $300   |
+ 		| 44  | 300   |
+ 		| 45  | 200   |
+ 		| 46  | 200   |
+ 		| 64  | 200   |
+ 		| 65  | 300   |
+ 		| 66  | 300   |

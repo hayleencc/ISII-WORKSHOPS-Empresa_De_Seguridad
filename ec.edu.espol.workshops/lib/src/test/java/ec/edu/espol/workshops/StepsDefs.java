@@ -25,7 +25,7 @@ public class StepsDefs {
 	public void calculate_premium1() {
 		actualAnswer = carInsurance.getPremium();
 	}
-	@Then("We should receive: Premium Car Insurance: $200")
+	@Then("We should receive: Premium Car Insurance: $300")
 	public void receive1() {
 		assertEquals("300", actualAnswer);
 	}
