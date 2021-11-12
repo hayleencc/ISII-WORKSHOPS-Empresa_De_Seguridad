@@ -71,6 +71,9 @@ public class CarInsurance {
      * @param args
      */
     public static void main(String args[]) {
+    	Scanner sc = new Scanner(System.in);
+        System.out.print("Premium Car Insurance Calculator\n" + "Enter customer information\n" + "Age:");
+        String age = sc.nextLine();
 
         
 
