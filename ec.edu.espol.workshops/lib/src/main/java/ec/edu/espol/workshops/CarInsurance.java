@@ -6,19 +6,19 @@ import java.util.Scanner;
  *
  */
 public class CarInsurance {
-	private int age;
+	private static int age;
     /**
      * SEX OF THE COSTUMER
      */
-    private String sex;
+    private static String sex;
     /**
      * IS THE COSTUMER MARRIED
      */
-    private boolean married;
+    private static boolean married;
     /**
      * 10 DIGITS DRIVER LICENSE OF THE COSTUMER
      */
-    private String driverLicense;
+    private static String driverLicense;
 
     public int getAge() {
         return this.age;
@@ -73,33 +73,87 @@ public class CarInsurance {
     public static void main(String args[]) {
     	Scanner sc = new Scanner(System.in);
         System.out.print("Premium Car Insurance Calculator\n" + "Enter customer information\n" + "Age:");
-        String age = sc.nextLine();
+        String age2 = sc.nextLine();
+        boolean validAge = isNumeric(age2);
+        while (!validAge) {
+            System.out.print("Enter an valid number for age:");
+            age2 = sc.nextLine();
+            validAge = isNumeric(age2);
+        }
+        age=Integer.valueOf(age2);
+        boolean isOlder = Integer.valueOf(age) > 80;
+        if (isOlder) {
+            System.out.print("sorry, premium car insurance is not available for 80 years older");
+            return;
+        }
+
+        System.out.print("Sex [M/F] :");
+        String sex2 = sc.nextLine();
+        boolean validSex = "M".equalsIgnoreCase(sex2) || "F".equalsIgnoreCase(sex2);
+        while (!validSex) {
+            System.out.print("Enter an correct sex [M/F]:");
+            sex2 = sc.nextLine();
+            validSex = "M".equalsIgnoreCase(sex2) || "F".equalsIgnoreCase(sex2);
+        }
+        sex=sex2;
+
+        System.out.print("Is married? [Y/N]:");
+        String yOrN = sc.nextLine();
+        boolean validMarried = "Y".equalsIgnoreCase(yOrN) || "N".equalsIgnoreCase(yOrN);
+        while (!validMarried) {
+            System.out.print("Enter an correct answer for married [Y/N]:");
+            yOrN = sc.nextLine();
+            validMarried = "Y".equalsIgnoreCase(yOrN) || "N".equalsIgnoreCase(yOrN);
+        }
+        boolean married2 = "Y".equalsIgnoreCase(yOrN);
+        married=married2;
+
+        System.out.print("Driving License [ten digits]:");
+        String license2 = sc.nextLine();
+        boolean validLicense = isNumeric(license2) && license2.length() == 10;
+        while (!validLicense) {
+            System.out.print("Come on, Driving License [ten digits]:");
+            license2 = sc.nextLine();
+            validLicense = isNumeric(license2) && license2.length() == 10;
+        }
+        sc.close();
+        driverLicense=license2;
+        if (validLicense){
+        	String total=getPremium();
+        	System.out.println("");
+            System.out.println("Premium Car Insurance:");
+            System.out.println("$"+total);
+            System.out.println("");
+        	 
+        }
 
         
 
     }
     
-    public String getPremium() {
+    public static String getPremium() {
     	
     	
-        boolean isOlder = Integer.valueOf(this.age) > 80;
+        boolean isOlder = Integer.valueOf(age) > 80;
         
         
         int total = 500;
-        boolean isYounger = Integer.valueOf(this.age) < 25;
-        boolean isMale = "M".equalsIgnoreCase(this.sex);
+        boolean isYounger = Integer.valueOf(age) < 25;
+        boolean isMale = "M".equalsIgnoreCase(sex);
         if(isOlder || driverLicense.length() != 10) {
         	return "0";
+        	//total= 0;
         }
-        if (isMale && !this.married && isYounger) {
+        if (isMale && !married && isYounger) {
             total += 1500;
-        } else if (!isMale || this.married) {
+        } else if (!isMale || married) {
             total -= 200;
         }
-        if (Integer.valueOf(this.age) >= 45 && Integer.valueOf(age) < 65) {
+        if (Integer.valueOf(age) >= 45 && Integer.valueOf(age) < 65) {
             total -= 100;
         }
         
+
         return String.valueOf(total);
     }
     
