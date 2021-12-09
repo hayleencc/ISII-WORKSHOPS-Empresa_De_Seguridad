@@ -120,7 +120,7 @@ public class CarInsurance {
         }
         sc.close();
 
-        int total = 500;
+        int total = 600;
         boolean isYounger = Integer.valueOf(age) < 25;
         boolean isMale = "M".equalsIgnoreCase(sex);
         if (isMale && !married && isYounger) {
