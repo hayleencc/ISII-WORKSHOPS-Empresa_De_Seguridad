@@ -72,7 +72,7 @@ public class CarInsurance {
     public static void main(String args[]) {
 
         Scanner sc = new Scanner(System.in);
-        System.out.print("Premium Car Insurance Calculator\n" + "Enter customer information\n" + "Age:");
+        System.out.print("Premium Car Insurance Calculator\n" + "Enter customer information\n" + "Age:\n");
         String age = sc.nextLine();
         boolean validAge = isNumeric(age);
         while (!validAge) {
@@ -134,7 +134,6 @@ public class CarInsurance {
         System.out.println("");
         System.out.println("Premiunm Car Insurance:");
         System.out.println("$"+total);
-        System.out.println("");
 
     }
 
