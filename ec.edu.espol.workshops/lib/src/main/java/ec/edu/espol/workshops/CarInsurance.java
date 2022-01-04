@@ -14,26 +14,26 @@ public class CarInsurance {
      * @author ispovala
      *
      */
-    public class Customer {
+   //ublic class Customer {
 
         /**
          * AGE OF THE COSTUMER
          */
-        private int age;
+       //rivate int age;
         /**
          * SEX OF THE COSTUMER
          */
-        private char sex;
+      //private char sex;
         /**
          * IS THE COSTUMER MARRIED
          */
-        private boolean married;
+      //private boolean married;
         /**
          * 10 DIGITS DRIVER LICENSE OF THE COSTUMER
          */
-        private String driverLicense;
+      //private String driverLicense;
 
-        public int getAge() {
+     /*public int getAge() {
             return this.age;
         }
 
@@ -93,30 +93,30 @@ public class CarInsurance {
 
         System.out.print("Sex [M/F] :");
         String sex = sc.nextLine();
-        boolean validSex = "M".equalsIgnoreCase(sex) || "F".equalsIgnoreCase(sex);
-        while (!validSex) {
+        //boolean validSex = "M".equalsIgnoreCase(sex) || "F".equalsIgnoreCase(sex);
+        while (!("M".equalsIgnoreCase(sex) || "F".equalsIgnoreCase(sex))){
             System.out.print("Enter an correct sex [M/F]:");
             sex = sc.nextLine();
-            validSex = "M".equalsIgnoreCase(sex) || "F".equalsIgnoreCase(sex);
+          //validSex = "M".equalsIgnoreCase(sex) || "F".equalsIgnoreCase(sex);
         }
 
         System.out.print("Is married? [Y/N]:");
         String yOrN = sc.nextLine();
-        boolean validMarried = "Y".equalsIgnoreCase(yOrN) || "N".equalsIgnoreCase(yOrN);
-        while (!validMarried) {
+        //boolean validMarried = "Y".equalsIgnoreCase(yOrN) || "N".equalsIgnoreCase(yOrN);
+        while (!("Y".equalsIgnoreCase(yOrN) || "N".equalsIgnoreCase(yOrN))) {
             System.out.print("Enter an correct answer for married [Y/N]:");
             yOrN = sc.nextLine();
-            validMarried = "Y".equalsIgnoreCase(yOrN) || "N".equalsIgnoreCase(yOrN);
+            //validMarried = "Y".equalsIgnoreCase(yOrN) || "N".equalsIgnoreCase(yOrN);
         }
         boolean married = "Y".equalsIgnoreCase(yOrN);
 
         System.out.print("Driving License [ten digits]:");
         String license = sc.nextLine();
-        boolean validLicense = isNumeric(license) && license.length() == 10;
-        while (!validLicense) {
+        //boolean validLicense = isNumeric(license) && license.length() == 10;
+        while (!(isNumeric(license) && license.length() == 10)) {
             System.out.print("Come on, Driving License [ten digits]:");
             license = sc.nextLine();
-            validLicense = isNumeric(license) && license.length() == 10;
+            //validLicense = isNumeric(license) && license.length() == 10;
         }
         sc.close();
 

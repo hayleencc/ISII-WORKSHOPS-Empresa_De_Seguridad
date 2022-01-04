@@ -96,7 +96,7 @@ public class PathCoverageTest {
 	@Test
     public void IP_005(){
         InputStream stdin = System.in;
-        System.setIn(new ByteArrayInputStream("21\nF\nY\n123456789\n1234567890\n".getBytes()));
+        System.setIn(new ByteArrayInputStream("66\nF\nY\n123456789\n1234567890\n".getBytes()));
 
         ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
         PrintStream ps = new PrintStream(byteArrayOutputStream);
@@ -138,7 +138,7 @@ public class PathCoverageTest {
 	@Test
     public void IP_007(){
         InputStream stdin = System.in;
-        System.setIn(new ByteArrayInputStream("21\nwoman\nF\nY\n1234567890\n".getBytes()));
+        System.setIn(new ByteArrayInputStream("21\nwoman\nf\nY\n1234567890\n".getBytes()));
 
         ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
         PrintStream ps = new PrintStream(byteArrayOutputStream);
