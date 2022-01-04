@@ -23,12 +23,8 @@ public class StatementCoverageTest {
 
        String outputText = byteArrayOutputStream.toString();
        String[] arr = outputText.split("\n");
-       String[] resultados = new String[] {"$2000\n"};
-       //System.out.print(arr[arr.length-1].getClass().getName());
-       //System.out.print(resultados[0].getClass().getName());
-       //String key = "output:";
-       //String output = outputText.substring(outputText.indexOf(key) + key.length()).trim();
-       Assert.assertEquals(arr[arr.length-1], resultados[0] );
+       String[] resultados = new String[] {"$2000"};
+       Assert.assertTrue(arr[arr.length-1].contains(resultados[0]));
     }
 	@Test
     public void pathTest2(){
@@ -47,12 +43,8 @@ public class StatementCoverageTest {
 
        String outputText = byteArrayOutputStream.toString();
        String[] arr = outputText.split("\n");
-       String[] resultados = new String[] {"$200\n"};
-       //System.out.print(arr[arr.length-1].getClass().getName());
-       //System.out.print(resultados[0].getClass().getName());
-       //String key = "output:";
-       //String output = outputText.substring(outputText.indexOf(key) + key.length()).trim();
-       Assert.assertEquals(arr[arr.length-1], resultados[0] );
+       String[] resultados = new String[] {"$200"};
+       Assert.assertTrue(arr[arr.length-1].contains(resultados[0]));
     }
 	@Test
     public void pathTest3(){
@@ -71,12 +63,8 @@ public class StatementCoverageTest {
 
        String outputText = byteArrayOutputStream.toString();
        String[] arr = outputText.split("\n");
-       String[] resultados = new String[] {"Sorry, premium car insurance is not available for under age\n"};
-       //System.out.print(arr[arr.length-1].getClass().getName());
-       //System.out.print(resultados[0].getClass().getName());
-       //String key = "output:";
-       //String output = outputText.substring(outputText.indexOf(key) + key.length()).trim();
-       Assert.assertEquals(arr[arr.length-1], resultados[0] );
+       String[] resultados = new String[] {"Sorry, premium car insurance is not available for under age"};
+       Assert.assertTrue(arr[arr.length-1].contains(resultados[0]) );
     }
 	@Test
     public void pathTest4(){
@@ -95,11 +83,7 @@ public class StatementCoverageTest {
 
        String outputText = byteArrayOutputStream.toString();
        String[] arr = outputText.split("\n");
-       String[] resultados = new String[] {"Sorry, premium car insurance is not available for 80 years older\n"};
-       //System.out.print(arr[arr.length-1].getClass().getName());
-       //System.out.print(resultados[0].getClass().getName());
-       //String key = "output:";
-       //String output = outputText.substring(outputText.indexOf(key) + key.length()).trim();
-       Assert.assertEquals(arr[arr.length-1], resultados[0] );
+       String[] resultados = new String[] {"Sorry, premium car insurance is not available for 80 years older"};
+       Assert.assertTrue(arr[arr.length-1].contains(resultados[0]));
     }
 }
