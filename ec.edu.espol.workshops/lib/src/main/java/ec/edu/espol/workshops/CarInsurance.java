@@ -7,64 +7,64 @@ import java.util.Scanner;
  */
 public class CarInsurance {
 
-    private CarInsurance() {
-    }
-
-    /**
-     * @author ispovala
-     *
-     */
-    public class Customer {
-
-        /**
-         * AGE OF THE COSTUMER
-         */
-        private int age;
-        /**
-         * SEX OF THE COSTUMER
-         */
-        private char sex;
-        /**
-         * IS THE COSTUMER MARRIED
-         */
-        private boolean married;
-        /**
-         * 10 DIGITS DRIVER LICENSE OF THE COSTUMER
-         */
-        private String driverLicense;
-
-        public int getAge() {
-            return this.age;
-        }
-
-        public char getSex() {
-            return this.sex;
-        }
-
-        public boolean isMarried() {
-            return this.married;
-        }
-
-        public String getDriverLicense() {
-            return this.driverLicense;
-        }
-
-        public void setAge(int age) {
-            this.age = age;
-        }
-
-        public void setSex(char sex) {
-            this.sex = sex;
-        }
-
-        public void setMarried(boolean married) {
-            this.married = married;
-        }
-
-        public void setDriverLicense(String driverLicense) {
-            this.driverLicense = driverLicense;
-        }
-    }
+//    private CarInsurance() {
+//    }
+//
+//    /**
+//     * @author ispovala
+//     *
+//     */
+//    public class Customer {
+//
+//        /**
+//         * AGE OF THE COSTUMER
+//         */
+//        private int age;
+//        /**
+//         * SEX OF THE COSTUMER
+//         */
+//        private char sex;
+//        /**
+//         * IS THE COSTUMER MARRIED
+//         */
+//        private boolean married;
+//        /**
+//         * 10 DIGITS DRIVER LICENSE OF THE COSTUMER
+//         */
+//        private String driverLicense;
+//
+//        public int getAge() {
+//            return this.age;
+//        }
+//
+//        public char getSex() {
+//            return this.sex;
+//        }
+//
+//        public boolean isMarried() {
+//            return this.married;
+//        }
+//
+//        public String getDriverLicense() {
+//            return this.driverLicense;
+//        }
+//
+//        public void setAge(int age) {
+//            this.age = age;
+//        }
+//
+//        public void setSex(char sex) {
+//            this.sex = sex;
+//        }
+//
+//        public void setMarried(boolean married) {
+//            this.married = married;
+//        }
+//
+//        public void setDriverLicense(String driverLicense) {
+//            this.driverLicense = driverLicense;
+//        }
+//    }
 
     /**
      * @param args
@@ -128,6 +128,12 @@ public class CarInsurance {
         } else if (!isMale || married) {
             total -= 200;
         }
+		if (married && Integer.valueOf(age) > 30 && Integer.valueOf(age) < 60) {
+			total -= 50;
+		}
+		if (!married && !isMale && Integer.valueOf(age) > 60) {
+			total -= 50;
+		}		
         if (Integer.valueOf(age) >= 45 && Integer.valueOf(age) < 65) {
             total -= 100;
         }
