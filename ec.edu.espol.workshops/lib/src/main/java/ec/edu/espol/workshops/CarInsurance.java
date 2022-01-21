@@ -128,11 +128,8 @@ public class CarInsurance {
         } else if (!isMale || married) {
             total -= 200;
         }
-		if (married) {
-			total -= 50;
-		}
-		if (Integer.valueOf(age) > 30 && Integer.valueOf(age) < 60) {
-			total -= 50;
+		if (married && Integer.valueOf(age) > 30 && Integer.valueOf(age) < 60) {
+			total -= 100;
 		}
 		if (!married && !isMale && Integer.valueOf(age) > 60) {
 			total -= 50;
